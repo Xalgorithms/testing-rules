@@ -1,5 +1,5 @@
 EFFECTIVE
-  IN "CA-ON", "CA-QC"
+  IN "CA-NB", "CA-QC"
   FROM "2018-04-01T00:00"
   TO "9999-12-30T23:59"
   TIMEZONE "America/Toronto";
