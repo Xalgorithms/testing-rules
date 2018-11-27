@@ -1,0 +1,14 @@
+[
+  { "region" : "CA-NL", "GST": 5, "PST": 10},
+  { "region" : "CA-PE", "GST": 5, "PST": 10},
+  { "region" : "CA-NS", "GST": 5, "PST": 10},
+  { "region" : "CA-NB", "GST": 5, "PST": 10},
+  { "region" : "CA-QC", "GST": 5, "PST": 10},
+  { "region" : "CA-ON", "GST": 5, "PST": 8},
+  { "region" : "CA-MB", "GST": 5, "PST": 8},
+  { "region" : "CA-SK", "GST": 5, "PST": 5},
+  { "region" : "CA-AB", "GST": 5, "PST": 0},
+  { "region" : "CA-BC", "GST": 5, "PST": 7},
+  { "region" : "CA-YT", "GST": 5, "PST": 0},
+  { "region" : "CA-NT", "GST": 5, "PST": 0}
+]

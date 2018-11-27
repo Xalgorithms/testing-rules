@@ -1,0 +1,5 @@
+META
+  VERSION "0.0.1"
+  MAINTAINER "Ryan Fleck <ryan.fleck@protonmail.com>";
+
+DATA provincial_vat.json 5071d3ac04ea2be8eafd8b23b3c9336a;
