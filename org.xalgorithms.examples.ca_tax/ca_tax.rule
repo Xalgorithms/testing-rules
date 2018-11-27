@@ -1,0 +1,34 @@
+
+META
+  VERSION "0.0.3"
+  RUNTIME "0.4.0"
+  CRITICALITY "experimental"
+  MANAGER "Joseph Potvin <jpotvin@xalgorithms.org>"
+  MAINTAINER "Ryan Fleck <ryan.fleck@protonmail.com>";
+  
+EFFECTIVE
+  IN "CA-*"
+  FROM "2018-04-01T00:00"
+  TO "9999-12-30T23:59"
+  TIMEZONE "America/Toronto";
+
+# WHEN document:transaction.currency == "CAD";
+
+REQUIRE tax:provincial_vat:0.0.1 AS provincial_vat;
+
+ASSEMBLE applicable_vat
+  COLUMNS FROM table:provincial_vat
+    WHEN @region == document:region;
+
+MAP table:applicable_vat
+  USING HST = add(@GST, @PST);
+
+ASSEMBLE apply_vat
+  COLUMN HST FROM table:applicable_vat;
+
+MAP table:apply_vat
+  USING TaxRate = add(1, multiply(divide(1, 100), @HST));
+
+MAP table:apply_vat
+  USING Total = multiply(@TaxRate, document:subtotal);
+  
